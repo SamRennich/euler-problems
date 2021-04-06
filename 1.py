@@ -7,10 +7,10 @@
 # Answer: 233168
 # Solved: 4/5/21
 
-sum = 0
+sum = 0 # Sum tracker
 
 for i in range(1000):
-    if i % 3 == 0 or i % 5 == 0:
-        sum += i
+    if i % 3 == 0 or i % 5 == 0: # Divisible by 3 or 5
+        sum += i # If so, add to sum
 
-print(sum)
+print(sum) # Print answer

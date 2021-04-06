@@ -9,15 +9,15 @@
 # Answer: 4613732
 # Solved: 4/5/21
 
-sum = 0
+sum = 0 # Sum tracker
 
-x = 1
-y = 1
+x = 1 # First integer
+y = 1 # Second integer
 
 while (y < 4000000):
-    x, y = y, x + y
+    x, y = y, x + y # Iterates through the sequence
     
-    if y % 2 == 0:
-        sum += y
+    if y % 2 == 0: # If even,
+        sum += y # Add to sum
 
-print(sum)
+print(sum) # Print answer
