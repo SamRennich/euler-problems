@@ -14,4 +14,4 @@ for x in range(100, 999): # First integer iterations
         if str(x * y) == (str(x * y)[::-1]) and x * y > largest: # Checks if palindrome and largest
             largest = x * y
 
-print(largest) # Print answer
+print(largest) # Prints answer

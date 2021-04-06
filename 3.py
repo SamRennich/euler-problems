@@ -24,4 +24,4 @@ while num > 1: # Iterates until value is fully factored
         divisor -= 2
     divisor += 2 # Iterates through every odd divisor
 
-print(largestFactor) # Print answer
+print(largestFactor) # Prints answer

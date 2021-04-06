@@ -13,4 +13,4 @@ for x in range(1, 21): # Iterates 1 through 20
     while num % x != 0:
         num += step # Iterates until divisble by next number in 1-20
 
-print(num) # Print answer
+print(num) # Prints answer

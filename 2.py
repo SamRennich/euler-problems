@@ -20,4 +20,4 @@ while (y < 4000000):
     if y % 2 == 0: # If even,
         sum += y # Add to sum
 
-print(sum) # Print answer
+print(sum) # Prints answer
