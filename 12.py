@@ -18,25 +18,36 @@
 # Answer: 76576500
 # Solved: 4/6/21
 
-divisors = 0
-num = 1
-step = 2
+divisorTotal = 1 # Tracks total number of divisors
+counter = 1 # Tracks the stage in triangular numbers
 
-while divisors <= 500:
+while divisorTotal <= 500: # Iterates until a number with more than 500 divisors is found
     
-    divisors = 1
+    num = int((1 / 2) * counter * (counter + 1)) # Finds the triangular value
     
-    for i in range(1, int(num/2) + 1):
-        if num % i == 0:
-            divisors += 1
-    
-    if divisors > 100:
-        answer = num
-    
-    num += step
-    step += 1
-    while num % 2 != 0:
-        num += step
-        step += 1
+    divisorTotal = 1 # Resets the total
+    power = 0 # Power for prime factor repetition
 
-print(answer)
+    while num % 2 == 0: # Iterates through evens
+        if num % 2== 0:
+            num /= 2
+            divisorTotal *= (2 + power) / (1 + power) # Increases overall divisor total
+            power += 1
+
+    divisor = 3 # Resets divisor
+    power = 0 # Resets power
+
+    while num > 1: # Iterates until value is fully factored
+        if num % divisor == 0:
+            num /= divisor
+            divisorTotal *= (2 + power) / (1 + power) # Increases overall divisor total
+            power += 1
+        else:
+            power = 0 # Resets power
+            divisor += 2 # Iterates through every odd divisor
+    
+    counter += 1 # Iterates through triangular number stages
+
+num = int((1 / 2) * counter * (counter - 1)) # Finds num after while has ended
+
+print(num) # Prints answer
