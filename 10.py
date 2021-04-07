@@ -16,7 +16,7 @@ for num in range(3, 2000000, 2): # Iterates through every odd number
     
     for x in range(3, int(sqrt(num) + 1), 2): # Checks if value is prime
         if num % x == 0:
-            primeCheck =se
+            primeCheck = False
     
     if primeCheck: # If prime, adds to sum
         sum += num
