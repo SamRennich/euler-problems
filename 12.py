@@ -16,7 +16,7 @@
 # What is the value of the first triangle number to have over five hundred divisors?
 
 # Answer: 76576500
-# Solved: 4/6/21
+# Solved: 4/7/21
 
 divisorTotal = 1 # Tracks total number of divisors
 counter = 1 # Tracks the stage in triangular numbers
