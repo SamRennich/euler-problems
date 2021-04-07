@@ -63,7 +63,7 @@ for x in range(81, 594): # Iterates through every valid starting point
     # Cardinal directions for clarity
     # Using 4 directions to cover all combinations
     N = intList[x] * intList[x - 26] * intList[x - 52] * intList[x - 78]
-    NE = intList[x] * intList[x - 25] * intList[x - 50] * intList[x - 76]
+    NE = intList[x] * intList[x - 25] * intList[x - 50] * intList[x - 75]
     E = intList[x] * intList[x + 1] * intList[x + 2] * intList[x + 3]
     SE = intList[x] * intList[x + 27] * intList[x + 54] * intList[x + 81]
     
