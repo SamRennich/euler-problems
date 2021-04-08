@@ -5,7 +5,7 @@
 # How many such routes are there through a 20×20 grid?
 
 # Answer: 137846528820
-# Solved: 4/ /21
+# Solved: 4/8/21
 
 from math import pow
 
