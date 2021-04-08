@@ -7,3 +7,13 @@
 # Answer: 137846528820
 # Solved: 4/ /21
 
+from math import pow
+
+num = 2 # Starts the paths at the value of a 1x1 lattice
+power = 0 # Default power value
+
+for i in range(2, 21): # Iterates through all lattices
+    num = (num + (num * ((1 + power) / (2 + power)))) * 2
+    power += 1 # Increases power each iteration
+
+print(int(num)) # Prints answer
