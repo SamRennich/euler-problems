@@ -9,7 +9,7 @@
 
 sum = 0 # Sum tracker
 
-for i in range(1000):
+for i in range(99999999):
     if i % 3 == 0 or i % 5 == 0: # Divisible by 3 or 5
         sum += i # If so, add to sum
 
