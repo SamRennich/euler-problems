@@ -25,7 +25,7 @@ int main() {
 	
 	while (b <= RANGE) { // Iterate through all Fibonacci numbers through the range
 		
-		int temp = a; // Store abort
+		int temp = a; // Store a
 		a = b; // Swap
 		b = b + temp; // Find new Fibonacci number
 		
