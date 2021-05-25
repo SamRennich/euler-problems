@@ -11,7 +11,7 @@ Solved: Apr 6, 2021
 #include <iostream>
 
 // Declare constants
-const unsigned long long RANGE = 600851475143;
+const unsigned long long int RANGE = 600851475143;
 
 // Main program
 int main() {
