@@ -1,4 +1,4 @@
- /*
+/*
 Problem 3: Largest Prime Factor
 
 The prime factors of 13195 are 5, 7, 13 and 29.
@@ -11,7 +11,7 @@ Solved: 4/6/21
 #include <iostream>
 
 // Declare constants
-const long long RANGE = 600851475143;
+const unsigned long long RANGE = 600851475143;
 
 // Main program
 int main() {
