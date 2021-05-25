@@ -9,7 +9,7 @@ Answer: 233168
 Solved: Apr 5, 2021
 */
 
-#include <iostream>
+#include <iostream> // std
 
 // Declare constants
 const int RANGE = 1000;
