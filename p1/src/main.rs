@@ -12,11 +12,9 @@ const RANGE: i32 = 999;
 
 fn main() {
 
-    let sum = sum(RANGE / 3) * 3 + sum(RANGE / 5) * 5 - sum(RANGE / 15) * 15;
+    let summation = |range| ((range as f64 / 2.0) * (range as f64 + 1.0)) as i32;
+
+    let sum = summation(RANGE / 3) * 3 + summation(RANGE / 5) * 5 - summation(RANGE / 15) * 15;
 
     println!("{}", sum);
-}
-
-fn sum(range: i32) -> i32 {
-    ((range as f64 / 2.0) * (range as f64 + 1.0)) as i32
 }
