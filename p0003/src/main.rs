@@ -10,7 +10,6 @@ Answer: 6857
 const RANGE: u64 = 600851475143;
 
 fn main() {
-
     let mut num = RANGE;
     let mut largest_prime_factor = 0;
 
