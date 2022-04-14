@@ -11,7 +11,6 @@ Answer: 233168
 const RANGE: i32 = 999;
 
 fn main() {
-
     let summation = |range| ((range as f64 / 2.0) * (range as f64 + 1.0)) as i32;
 
     let sum = summation(RANGE / 3) * 3 + summation(RANGE / 5) * 5 - summation(RANGE / 15) * 15;
