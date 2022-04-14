@@ -19,7 +19,6 @@ fn main() {
     }
 
     let mut i = 3;
-
     while num > 1 {
         while num % i == 0 {
             num /= i;
