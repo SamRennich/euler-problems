@@ -9,13 +9,8 @@ Answer: 104743
 Solved: May 24, 2021
 */
 
-// const RANGE: i32 = 10001;
-
-use primes::PrimeSet;
+const RANGE: i32 = 10001;
 
 fn main() {
-    let pset = PrimeSet::new();
-    // for (ix, n) in pset.iter().enumerate().skip(1_000).take(10) {
-    //     println!("Prime {}: {}", ix, n);
-    // }
+    println!("{}", primal::StreamingSieve::nth_prime(RANGE as usize));
 }
