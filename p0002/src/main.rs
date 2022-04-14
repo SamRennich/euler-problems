@@ -13,12 +13,10 @@ Answer: 4613732
 const RANGE: i32 = 4000000;
 
 fn main() {
-
     let (mut a, mut b) = (1, 2);
     let mut sum = 0;
 
     while b < RANGE {
-
         if b % 2 == 0 {
             sum += b;
         }
