@@ -6,7 +6,6 @@ we can see that the 6th prime is 13.
 What is the 10001st prime number?
 
 Answer: 104743
-Solved: May 24, 2021
 */
 
 const RANGE: i32 = 10001;
