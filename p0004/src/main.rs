@@ -26,7 +26,6 @@ fn main() {
     for i in 1..RANGE {
         for j in 1..RANGE {
             let product = i * j;
-
             if (product) > largest_palidrome && (product) == rev(product) {
                 largest_palidrome = product;
             }
