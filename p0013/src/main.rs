@@ -120,7 +120,7 @@ fn main() {
             sum[j] += NUMS[i][j];
         }
 
-        for k in 1..sum.len() {
+        for k in (1..sum.len()).rev() {
             if sum[k] > TRUNC {
                 sum[k] -= TRUNC;
                 sum[k - 1] += 1;
