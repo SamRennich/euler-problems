@@ -53,27 +53,27 @@ const NUMBERS: &str = "73167176531330624919225119674426574742355349194934
 71636269561882670428252483600823257530420752963450";
 
 fn main() {
-    let mut nums = vec![];
+	let mut nums = vec![];
 
-    for digit in NUMBERS.chars() {
-        if digit != '\n' {
-            nums.push(digit.to_digit(10).unwrap() as u8);
-        }
-    }
+	for digit in NUMBERS.chars() {
+		if digit != '\n' {
+			nums.push(digit.to_digit(10).unwrap() as u8);
+		}
+	}
 
-    let mut largest_product = 0;
+	let mut largest_product = 0;
 
-    for i in 0..=(nums.len() - DIGITS as usize) {
-        let mut product: u64 = 1;
+	for i in 0..=(nums.len() - DIGITS as usize) {
+		let mut product: u64 = 1;
 
-        for j in i..(i + DIGITS as usize) {
-            product *= nums[j] as u64;
-        }
+		for j in i..(i + DIGITS as usize) {
+			product *= nums[j] as u64;
+		}
 
-        if product > largest_product {
-            largest_product = product;
-        }
-    }
+		if product > largest_product {
+			largest_product = product;
+		}
+	}
 
-    println!("{}", largest_product);
+	println!("{}", largest_product);
 }

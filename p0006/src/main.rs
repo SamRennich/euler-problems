@@ -17,16 +17,16 @@ Answer: 25164150
 const RANGE: i32 = 100;
 
 fn main() {
-    let mut squares_summed = 0;
-    for i in 1..=RANGE {
-        squares_summed += i * i;
-    }
+	let mut squares_summed = 0;
+	for i in 1..=RANGE {
+		squares_summed += i * i;
+	}
 
-    let mut sum_squared = 0;
-    for i in 1..=RANGE {
-        sum_squared += i;
-    }
-    sum_squared *= sum_squared;
+	let mut sum_squared = 0;
+	for i in 1..=RANGE {
+		sum_squared += i;
+	}
+	sum_squared *= sum_squared;
 
-    println!("{}", sum_squared - squares_summed);
+	println!("{}", sum_squared - squares_summed);
 }

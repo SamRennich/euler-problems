@@ -22,18 +22,18 @@ Answer: 76576500
 const GOAL: usize = 500;
 
 fn main() {
-    let mut sum = 0;
-    let mut answer = 0;
+	let mut sum = 0;
+	let mut answer = 0;
 
-    let mut i = 1;
-    while answer == 0 {
-        sum += i;
-        i += 1;
+	let mut i = 1;
+	while answer == 0 {
+		sum += i;
+		i += 1;
 
-        if prime_data::all_factors_of(sum).len() > GOAL {
-            answer = sum;
-        }
-    }
+		if prime_data::all_factors_of(sum).len() > GOAL {
+			answer = sum;
+		}
+	}
 
-    println!("{}", answer);
+	println!("{}", answer);
 }

@@ -19,26 +19,26 @@ Answer: 837799
 const RANGE: u64 = 1000000;
 
 fn main() {
-    let mut longest_chain_length = 0;
-    let mut longest_chain_value = 0;
+	let mut longest_chain_length = 0;
+	let mut longest_chain_value = 0;
 
-    for i in 0..RANGE {
-        let mut num = i;
-        let mut chain = 0;
-        while num > 1 {
-            if num % 2 == 0 {
-                num /= 2;
-            } else {
-                num = 3 * num + 1;
-            }
-            chain += 1;
-        }
+	for i in 0..RANGE {
+		let mut num = i;
+		let mut chain = 0;
+		while num > 1 {
+			if num % 2 == 0 {
+				num /= 2;
+			} else {
+				num = 3 * num + 1;
+			}
+			chain += 1;
+		}
 
-        if chain > longest_chain_length {
-            longest_chain_length = chain;
-            longest_chain_value = i;
-        }
-    }
+		if chain > longest_chain_length {
+			longest_chain_length = chain;
+			longest_chain_value = i;
+		}
+	}
 
-    println!("{}", longest_chain_value);
+	println!("{}", longest_chain_value);
 }

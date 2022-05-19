@@ -12,16 +12,16 @@ Answer: 137846528820
 const RANGE: i32 = 20;
 
 fn main() {
-    let mut paths: u64 = 2;
+	let mut paths: u64 = 2;
 
-    let step = |path, pow| {
-        let ratio = (1 + pow) as f64 / (2 + pow) as f64;
-        (path + (path as f64 * ratio) as u64) * 2
-    };
+	let step = |path, pow| {
+		let ratio = (1 + pow) as f64 / (2 + pow) as f64;
+		(path + (path as f64 * ratio) as u64) * 2
+	};
 
-    for power in 0..(RANGE - 1) {
-        paths = step(paths, power);
-    }
+	for power in 0..(RANGE - 1) {
+		paths = step(paths, power);
+	}
 
-    println!("{}", paths);
+	println!("{}", paths);
 }

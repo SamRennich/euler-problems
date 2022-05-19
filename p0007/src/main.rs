@@ -11,5 +11,5 @@ Answer: 104743
 const GOAL: i32 = 10001;
 
 fn main() {
-    println!("{}", primal::StreamingSieve::nth_prime(GOAL as usize));
+	println!("{}", primal::StreamingSieve::nth_prime(GOAL as usize));
 }

@@ -12,32 +12,32 @@ Answer: 232792560
 const RANGE: i32 = 20;
 
 fn main() {
-    let remainder = |mut base: Vec<u64>, removal: Vec<u64>| {
-        for i in removal {
-            let index = base.iter().position(|&x| x == i);
+	let remainder = |mut base: Vec<u64>, removal: Vec<u64>| {
+		for i in removal {
+			let index = base.iter().position(|&x| x == i);
 
-            if index != None {
-                base.remove(index.unwrap());
-            }
-        }
+			if index != None {
+				base.remove(index.unwrap());
+			}
+		}
 
-        base
-    };
+		base
+	};
 
-    let mut prime_factors = vec![];
-    for i in 1..=RANGE {
-        prime_factors.push(primes::factors(i as u64));
-    }
+	let mut prime_factors = vec![];
+	for i in 1..=RANGE {
+		prime_factors.push(primes::factors(i as u64));
+	}
 
-    let mut answer = vec![];
-    for factor_list in prime_factors {
-        answer.append(&mut remainder(factor_list, answer.clone()));
-    }
+	let mut answer = vec![];
+	for factor_list in prime_factors {
+		answer.append(&mut remainder(factor_list, answer.clone()));
+	}
 
-    let mut product = 1;
-    for i in answer {
-        product *= i;
-    }
+	let mut product = 1;
+	for i in answer {
+		product *= i;
+	}
 
-    println!("{}", product);
+	println!("{}", product);
 }

@@ -56,45 +56,45 @@ const NUMS: &str = "08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48";
 
 fn main() {
-    let mut nums: Vec<Vec<i32>> = vec![];
+	let mut nums: Vec<Vec<i32>> = vec![];
 
-    for line in NUMS.lines() {
-        let mut temp = vec![];
-        for num in line.split_whitespace() {
-            temp.push(num.parse::<i32>().unwrap());
-        }
-        nums.push(temp);
-    }
+	for line in NUMS.lines() {
+		let mut temp = vec![];
+		for num in line.split_whitespace() {
+			temp.push(num.parse::<i32>().unwrap());
+		}
+		nums.push(temp);
+	}
 
-    let mut greatest_product = 0;
+	let mut greatest_product = 0;
 
-    for i in 0..nums.len() {
-        for j in 0..nums[i].len() {
-            for k in 0..DIRECTIONS {
-                let row = |scale| i as i32 + ROW_PATTERN[k] * scale;
-                let col = |scale| j as i32 + COL_PATTERN[k] * scale;
-                let check = |index| {
-                    if index >= 0 && index < nums.len() as i32 {
-                        true
-                    } else {
-                        false
-                    }
-                };
+	for i in 0..nums.len() {
+		for j in 0..nums[i].len() {
+			for k in 0..DIRECTIONS {
+				let row = |scale| i as i32 + ROW_PATTERN[k] * scale;
+				let col = |scale| j as i32 + COL_PATTERN[k] * scale;
+				let check = |index| {
+					if index >= 0 && index < nums.len() as i32 {
+						true
+					} else {
+						false
+					}
+				};
 
-                if check(row(SIZE - 1)) && check(col(SIZE - 1)) {
-                    let mut product = 1;
+				if check(row(SIZE - 1)) && check(col(SIZE - 1)) {
+					let mut product = 1;
 
-                    for l in 0..SIZE {
-                        product *= nums[row(l) as usize][col(l) as usize];
-                    }
+					for l in 0..SIZE {
+						product *= nums[row(l) as usize][col(l) as usize];
+					}
 
-                    if product > greatest_product {
-                        greatest_product = product;
-                    }
-                }
-            }
-        }
-    }
+					if product > greatest_product {
+						greatest_product = product;
+					}
+				}
+			}
+		}
+	}
 
-    println!("{}", greatest_product);
+	println!("{}", greatest_product);
 }

@@ -13,25 +13,25 @@ const DIGITS: u32 = 3;
 const RANGE: i32 = i32::pow(10, DIGITS);
 
 fn main() {
-    let rev = |num: i32| {
-        num.to_string()
-            .chars()
-            .rev()
-            .collect::<String>()
-            .parse::<i32>()
-            .unwrap()
-    };
+	let rev = |num: i32| {
+		num.to_string()
+			.chars()
+			.rev()
+			.collect::<String>()
+			.parse::<i32>()
+			.unwrap()
+	};
 
-    let mut largest_palidrome = 0;
+	let mut largest_palidrome = 0;
 
-    for i in 1..RANGE {
-        for j in 1..RANGE {
-            let product = i * j;
-            if (product) > largest_palidrome && (product) == rev(product) {
-                largest_palidrome = product;
-            }
-        }
-    }
+	for i in 1..RANGE {
+		for j in 1..RANGE {
+			let product = i * j;
+			if (product) > largest_palidrome && (product) == rev(product) {
+				largest_palidrome = product;
+			}
+		}
+	}
 
-    println!("{}", largest_palidrome);
+	println!("{}", largest_palidrome);
 }

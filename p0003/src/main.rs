@@ -10,22 +10,22 @@ Answer: 6857
 const RANGE: u64 = 600851475143;
 
 fn main() {
-    let mut num = RANGE;
-    let mut largest_prime_factor = 0;
+	let mut num = RANGE;
+	let mut largest_prime_factor = 0;
 
-    while num % 2 == 0 {
-        num /= 2;
-        largest_prime_factor = 2;
-    }
+	while num % 2 == 0 {
+		num /= 2;
+		largest_prime_factor = 2;
+	}
 
-    let mut i = 3;
-    while num > 1 {
-        while num % i == 0 {
-            num /= i;
-            largest_prime_factor = i;
-        }
-        i += 2;
-    }
+	let mut i = 3;
+	while num > 1 {
+		while num % i == 0 {
+			num /= i;
+			largest_prime_factor = i;
+		}
+		i += 2;
+	}
 
-    println!("{}", largest_prime_factor);
+	println!("{}", largest_prime_factor);
 }

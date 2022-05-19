@@ -10,12 +10,12 @@ Answer: 142913828922
 const RANGE: u64 = 2000000;
 
 fn main() {
-    let primes = prime_data::PrimeData::generate(1..=RANGE);
+	let primes = prime_data::PrimeData::generate(1..=RANGE);
 
-    let mut sum = 0;
-    for prime in primes.iter_all() {
-        sum += prime;
-    }
+	let mut sum = 0;
+	for prime in primes.iter_all() {
+		sum += prime;
+	}
 
-    println!("{}", sum);
+	println!("{}", sum);
 }
