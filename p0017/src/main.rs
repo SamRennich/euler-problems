@@ -10,65 +10,76 @@ For example, 342 (three hundred and forty-two) contains 23 letters and 115
 (one hundred and fifteen) contains 20 letters.
 The use of "and" when writing out numbers is in compliance with British usage.
 
-Answer:
+Answer: 21124
 */
 
 const RANGE: i32 = 1000;
 
-charSum = 0 # Tracks the total number of characters
+fn main() {
+	let mut sum = 0;
 
-for i in range(342, 343): # Iterates through all numbers
+	for num in 1..=RANGE {
+		let ones = num % 10;
+		let tens = (num / 10) % 10;
+		let hundreds = (num / 100) % 10;
+		let thousands = (num / 1000) % 10;
 
-	ones = int(i % 10) # Finds ones place digit
-	tens = int(i / 10) % 10 # Finds tens place digit
-	hundreds = int(i / 100) # Finds hundreds place digit
+		if tens != 1 {
+			if ones == 1 { sum += "one".chars().count(); }
+			else if ones == 2 { sum += "two".chars().count(); }
+			else if ones == 3 { sum += "three".chars().count(); }
+			else if ones == 4 { sum += "four".chars().count(); }
+			else if ones == 5 { sum += "five".chars().count(); }
+			else if ones == 6 { sum += "six".chars().count(); }
+			else if ones == 7 { sum += "seven".chars().count(); }
+			else if ones == 8 { sum += "eight".chars().count(); }
+			else if ones == 9 { sum += "nine".chars().count(); }
 
-	# Finds characters for ones place
-	if tens != 1:
-		if ones == 1: charSum += 3
-		elif ones == 2: charSum += 3
-		elif ones == 3: charSum += 5
-		elif ones == 4: charSum += 4
-		elif ones == 5: charSum += 4
-		elif ones == 6: charSum += 3
-		elif ones == 7: charSum += 5
-		elif ones == 8: charSum += 5
-		elif ones == 9: charSum += 4
+			if tens == 2 { sum += "twenty".chars().count(); }
+			else if tens == 3 { sum += "thirty".chars().count(); }
+			else if tens == 4 { sum += "forty".chars().count(); }
+			else if tens == 5 { sum += "fifty".chars().count(); }
+			else if tens == 6 { sum += "sixty".chars().count(); }
+			else if tens == 7 { sum += "seventy".chars().count(); }
+			else if tens == 8 { sum += "eighty".chars().count(); }
+			else if tens == 9 { sum += "ninety".chars().count(); }
+		} else {
+			if ones == 0 { sum += "ten".chars().count(); }
+			else if ones == 1 { sum += "eleven".chars().count(); }
+			else if ones == 2 { sum += "twelve".chars().count(); }
+			else if ones == 3 { sum += "thirteen".chars().count(); }
+			else if ones == 4 { sum += "fourteen".chars().count(); }
+			else if ones == 5 { sum += "fifteen".chars().count(); }
+			else if ones == 6 { sum += "sixteen".chars().count(); }
+			else if ones == 7 { sum += "seventeen".chars().count(); }
+			else if ones == 8 { sum += "eighteen".chars().count(); }
+			else if ones == 9 { sum += "nineteen".chars().count(); }
+		}
 
-	# Finds characters for tens place
-	if tens == 1: # For values 11-19 (due to nuances)
-		if ones == 1: charSum += 6
-		elif ones == 2: charSum += 6
-		elif ones == 3: charSum += 8
-		elif ones == 4: charSum += 8
-		elif ones == 5: charSum += 7
-		elif ones == 6: charSum += 7
-		elif ones == 7: charSum += 9
-		elif ones == 8: charSum += 8
-		elif ones == 9: charSum += 8
-	elif tens == 2: charSum += 6
-	elif tens == 3: charSum += 6
-	elif tens == 4: charSum += 5
-	elif tens == 5: charSum += 5
-	elif tens == 6: charSum += 5
-	elif tens == 7: charSum += 7
-	elif tens == 8: charSum += 6
-	elif tens == 9: charSum += 6
+		if hundreds == 1 { sum += "onehundred".chars().count(); }
+		else if hundreds == 2 { sum += "twohundred".chars().count(); }
+		else if hundreds == 3 { sum += "threehundred".chars().count(); }
+		else if hundreds == 4 { sum += "fourhundred".chars().count(); }
+		else if hundreds == 5 { sum += "fivehundred".chars().count(); }
+		else if hundreds == 6 { sum += "sixhundred".chars().count(); }
+		else if hundreds == 7 { sum += "sevenhundred".chars().count(); }
+		else if hundreds == 8 { sum += "eighthundred".chars().count(); }
+		else if hundreds == 9 { sum += "ninehundred".chars().count(); }
 
-	# Finds characters for hundreds place
-	if hundreds == 1: charSum += 10
-	elif hundreds == 2: charSum += 10
-	elif hundreds == 3: charSum += 12
-	elif hundreds == 4: charSum += 11
-	elif hundreds == 5: charSum += 11
-	elif hundreds == 6: charSum += 10
-	elif hundreds == 7: charSum += 12
-	elif hundreds == 8: charSum += 12
-	elif hundreds == 9: charSum += 11
+		if thousands == 1 { sum += "onethousand".chars().count(); }
+		else if thousands == 2 { sum += "twothousand".chars().count(); }
+		else if thousands == 3 { sum += "threethousand".chars().count(); }
+		else if thousands == 4 { sum += "fourthousand".chars().count(); }
+		else if thousands == 5 { sum += "fivethousand".chars().count(); }
+		else if thousands == 6 { sum += "sixthousand".chars().count(); }
+		else if thousands == 7 { sum += "seventhousand".chars().count(); }
+		else if thousands == 8 { sum += "eightthousand".chars().count(); }
+		else if thousands == 9 { sum += "ninethousand".chars().count(); }
 
-	if hundreds > 0 and (ones > 0 or tens > 10): # To account for the "and"
-		charSum += 3
+		if (ones > 0 || tens > 0) && (hundreds > 0 || thousands > 0) {
+			sum += "and".chars().count();
+		}
+	}
 
-# charSum += 11 # For "one thousand"
-
-print(charSum) # Prints answer
+	println!("{}", sum);
+}
