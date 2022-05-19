@@ -12,9 +12,9 @@ Answer: 233168
 const RANGE: i32 = 999;
 
 fn main() {
-    let sum = |range| ((range as f64 / 2.0) * (range as f64 + 1.0)) as i32;
+	let sum = |range| ((range as f64 / 2.0) * (range as f64 + 1.0)) as i32;
 
-    let total = sum(RANGE / 3) * 3 + sum(RANGE / 5) * 5 - sum(RANGE / 15) * 15;
+	let total = sum(RANGE / 3) * 3 + sum(RANGE / 5) * 5 - sum(RANGE / 15) * 15;
 
-    println!("{}", total);
+	println!("{}", total);
 }
