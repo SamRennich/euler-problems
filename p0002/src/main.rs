@@ -12,13 +12,13 @@ find the sum of the even-valued terms.
 Answer: 4613732
 */
 
-const RANGE: i32 = 4000000;
+const LIMIT: i32 = 4000000;
 
 fn main() {
 	let (mut a, mut b) = (1, 2);
 	let mut sum = 0;
 
-	while b < RANGE {
+	while b < LIMIT {
 		if b % 2 == 0 {
 			sum += b;
 		}
