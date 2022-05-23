@@ -9,15 +9,17 @@ by all of the numbers from 1 to 20?
 Answer: 232792560
 */
 
-const RANGE: i32 = 20;
+#[path = "../../modules/src/prime.rs"]
+pub mod prime;
+
+const LIMIT: usize = 20;
 
 fn main() {
-	let remainder = |mut base: Vec<u64>, removal: Vec<u64>| {
-		for i in removal {
-			let index = base.iter().position(|&x| x == i);
-
+	let remainder = |mut base: Vec<usize>, removal| {
+		for factor in removal {
+			let index = base.iter().position(|&x| x == factor);
 			if index != None {
-				base.remove(index.unwrap());
+				base.swap_remove(index.unwrap());
 			}
 		}
 
@@ -25,19 +27,14 @@ fn main() {
 	};
 
 	let mut prime_factors = vec![];
-	for i in 1..=RANGE {
-		prime_factors.push(primes::factors(i as u64));
+	for i in 1..=LIMIT {
+		prime_factors.push(prime::prime_factors_list(i));
 	}
 
 	let mut answer = vec![];
 	for factor_list in prime_factors {
-		answer.append(&mut remainder(factor_list, answer.clone()));
+		answer.extend_from_slice(&remainder(factor_list, answer.clone()));
 	}
 
-	let mut product = 1;
-	for i in answer {
-		product *= i;
-	}
-
-	println!("{}", product);
+	println!("{}", answer.iter().product::<usize>());
 }
