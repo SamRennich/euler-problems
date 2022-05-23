@@ -1,5 +1,5 @@
 pub fn is_prime(n: usize) -> bool {
-	if n <= 1 {
+	if n % 2 == 0 || n <= 1 {
 		return false;
 	} else {
 		let limit = (n as f64).sqrt() as usize;
@@ -81,7 +81,7 @@ fn check_factor(div: usize, n: &mut usize, factors: &mut Vec<(usize, usize)>) {
 	}
 }
 
-pub fn prime_factors(mut n: usize) -> Vec<(usize, usize)> {
+pub fn prime_factors_pow(mut n: usize) -> Vec<(usize, usize)> {
 	if n <= 1 {
 		return vec![];
 	} else if is_prime(n) {
@@ -102,15 +102,35 @@ pub fn prime_factors(mut n: usize) -> Vec<(usize, usize)> {
 }
 
 pub fn num_unique_prime_factors(limit: usize) -> usize {
-	return prime_factors(limit).len();
+	return prime_factors_pow(limit).len();
+}
+
+pub fn prime_factors_list(mut n: usize) -> Vec<usize> {
+	if n <= 1 {
+		return vec![];
+	} else if is_prime(n) {
+		return vec![n];
+	} else {
+		let mut prime_factors = vec![];
+
+		while n % 2 == 0 {
+			n /= 2;
+			prime_factors.push(2);
+		}
+
+		let mut i = 3;
+		while n > 1 {
+			while n % i == 0 {
+				n /= i;
+				prime_factors.push(i);
+			}
+			i += 2;
+		}
+
+		return prime_factors;
+	}
 }
 
 pub fn num_total_prime_factors(limit: usize) -> usize {
-	let mut total = 0;
-
-	for factor in prime_factors(limit) {
-		total += factor.1;
-	}
-
-	return total;
+	return prime_factors_list(limit).len();
 }
