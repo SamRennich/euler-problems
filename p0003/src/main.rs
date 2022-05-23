@@ -7,7 +7,7 @@ What is the largest prime factor of the number 600851475143?
 Answer: 6857
 */
 
-#[path = "../../modules/prime.rs"]
+#[path = "../../modules/src/prime.rs"]
 pub mod prime;
 
 const NUM: usize = 600851475143;
