@@ -13,5 +13,5 @@ pub mod prime;
 const NUM: usize = 600851475143;
 
 fn main() {
-	println!("{}", prime::prime_factors(NUM).last().unwrap().0);
+	println!("{}", prime::prime_factors_list(NUM).last().unwrap());
 }
