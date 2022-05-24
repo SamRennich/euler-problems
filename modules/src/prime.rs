@@ -134,3 +134,12 @@ pub fn prime_factors_list(mut n: usize) -> Vec<usize> {
 pub fn num_total_prime_factors(limit: usize) -> usize {
 	return prime_factors_list(limit).len();
 }
+
+pub fn nth_prime(n: usize) -> usize {
+	if n == 0 {
+		return 0;
+	} else {
+		let x = n as f64;
+		return primes((x * (x.ln() + x.ln().ln())) as usize)[n - 1];
+	}
+}
