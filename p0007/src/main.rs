@@ -8,8 +8,11 @@ What is the 10001st prime number?
 Answer: 104743
 */
 
-const GOAL: i32 = 10001;
+#[path = "../../modules/src/prime.rs"]
+pub mod prime;
+
+const GOAL: usize = 10001;
 
 fn main() {
-	println!("{}", primal::StreamingSieve::nth_prime(GOAL as usize));
+	println!("{}", prime::nth_prime(GOAL));
 }
