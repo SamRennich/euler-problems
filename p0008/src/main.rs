@@ -30,7 +30,7 @@ What is the value of this product?
 Answer: 23514624000
 */
 
-const DIGITS: i32 = 13;
+const DIGITS: usize = 13;
 const NUMBERS: &str = "73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
@@ -54,19 +54,18 @@ const NUMBERS: &str = "73167176531330624919225119674426574742355349194934
 
 fn main() {
 	let mut nums = vec![];
-
 	for digit in NUMBERS.chars() {
 		if digit != '\n' {
-			nums.push(digit.to_digit(10).unwrap() as u8);
+			nums.push(digit.to_digit(10).unwrap());
 		}
 	}
 
 	let mut largest_product = 0;
 
-	for i in 0..=(nums.len() - DIGITS as usize) {
-		let mut product: u64 = 1;
+	for i in 0..=(nums.len() - DIGITS) {
+		let mut product = 1;
 
-		for j in i..(i + DIGITS as usize) {
+		for j in i..(i + DIGITS) {
 			product *= nums[j] as u64;
 		}
 
