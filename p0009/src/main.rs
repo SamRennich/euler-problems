@@ -9,14 +9,12 @@ Find the product abc.
 Answer: 31875000
 */
 
-use integer_sqrt::IntegerSquareRoot;
-
 const GOAL: i32 = 1000;
 
 fn main() {
 	let (mut m, mut n): (i32, i32) = (0, 0);
 
-	for i in 1..(GOAL / 2).integer_sqrt() {
+	for i in 1..(((GOAL / 2) as f64).sqrt() as i32) {
 		if (GOAL / 2 - i * i) % i == 0 {
 			m = i;
 			n = (GOAL / 2 - i * i) / i;
