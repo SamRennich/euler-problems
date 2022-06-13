@@ -60,6 +60,9 @@ fn main() {
 		}
 	}
 
+	let temp: Vec<char> = NUMBERS.chars().map(|x| x != '\n').collect();
+	println!("{:?}", temp);
+
 	let mut largest_product = 0;
 
 	for i in 0..=(nums.len() - DIGITS) {
