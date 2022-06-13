@@ -12,14 +12,14 @@ Answer: 31875000
 const GOAL: i32 = 1000;
 
 fn main() {
-	let (mut m, mut n): (i32, i32) = (0, 0);
+	let (mut m, mut n) = (0, 0);
 
-	for i in 1..(((GOAL / 2) as f64).sqrt() as i32) {
+	for i in (1..(((GOAL / 2) as f64).sqrt() as i32)).rev() {
 		if (GOAL / 2 - i * i) % i == 0 {
-			m = i;
-			n = (GOAL / 2 - i * i) / i;
+			(m, n) = (i, (GOAL / 2 - i * i) / i);
+			break;
 		}
 	}
 
-	println!("{}", (i32::pow(m, 4) - i32::pow(n, 4)) * 2 * m * n)
+	println!("{}", (m.pow(4) - n.pow(4)) * 2 * m * n)
 }
